@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.picture {
+  display: block;
+  background-image: -webkit-radial-gradient(#ffa949, firebrick);
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-size: cover; */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  opacity: 0.7;
+  justify-content: center;
+  align-items: center;
+}
+
+.split {
+  width: 50vw;
+  height: 100vh;
+  /* background: #7fff00; */
+  background: linear-gradient(to top, blue, green);
+}
+
+.split:hover {
+  opacity: 0.8;
+}
+
+.picture .split.left {
+  left: 0;
+  position: absolute;
+  transition: width 2s;
+}
+
+.picture:hover .split.left {
+  background-color: #90ee90;
+  width: 15%;
+  opacity: 0.7;
+}
+
+.picture .split.right {
+  right: 0;
+  position: absolute;
+  transition: width 2s;
+}
+
+.picture:hover .split.right {
+  background-color: #90ee90;
+  width: 15%;
+  opacity: 0.7;
+}
+
+/* List styling */
+#container {
+  background: #333;
+}
+
+.listbar {
+  list-style: none;
+  overflow: hidden;
+  background: #006400;
+}
+
+.listbar li {
+  float: left;
+}
+
+.listbar li a {
+  display: block;
+  background: linear-gradient(red, yellow);
+  padding: 10px;
+  margin: 5px;
+  text-decoration: none;
+  color: aqua;
+  border-radius: 5%;
+}
+
+.listbar li a:hover {
+  color: aquamarine;
+  background: #3cb321;
+  box-shadow: #999 10px 10px 10px;
+}
+
+.listbar li a:active {
+  color: yellow;
+  background: linear-gradient(blue, green);
+}
+
+#cntrbtn {
+  background-image: url("img/bismark.PNG");
+  /* background: #333; */
+  position: absolute;
+  display: block;
+  width: 50.7rem;
+  height: 30.4rem;
+  box-shadow: #999;
+  margin-top: 50vh;
+}
+
+.translate {
+  height: 100%;
+  width: 100%;
+  background-image: url("img/fluff.jpg");
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: slideInFromLeft 2s ease-out 0s 1, rotate 2s ease-out 3s 1;
+  transition: all 0.1s ease-out;
+  box-shadow: #f9f9f9 3px 3px 3px;
+  opacity: 0.9;
+}
+
+.picture:hover .translate {
+  visibility: hidden;
+}
+
+#top {
+  position: absolute;
+  animation: 1s ease-out 5s 1 dispLeft;
+}
+
+#bottom {
+  position: absolute;
+  color: #f9f9f9;
+  font-size: 60px;
+  opacity: 0.6;
+  animation: 1s ease-out 5s 1 dispRight;
+}
+
+.translate:hover {
+  transition: translate3D(0, 100%, 0);
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(360deg);
+  }
+  100% {
+    transform: translate(0deg);
+  }
+}
+
+@keyframes dispLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-700%);
+  }
+}
+
+@keyframes dispRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(500%);
+  }
+}
